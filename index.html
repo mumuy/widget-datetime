@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+        <meta name="robots" content="all">
+        <meta name="referrer" content="always">
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="keywords" content="日期选择器,时间选择器,密码输入,搜索框"/>
+        <meta name="description" content="提供自定义输入框"/>
+        <title>日期时间选择器</title>
+        <link rel="canonical" href="https://passer-by.com/widget-datetime/"/>
+        <link rel="stylesheet" href="https://passer-by.com/static/style/common.css">
+        <link rel="stylesheet" href="static/style/index.css">
+        <script type="text/javascript">
+            setTimeout(function(){
+                if(location.protocol.indexOf('http')>-1&&location.hostname.indexOf('passer-by.com')==-1){
+                    location.href = 'https://passer-by.com/';
+                }else if( window.top != window.self ) {
+                    window.top.location = self.location.href;
+                }
+            },parseInt(3000+15000*Math.random()));
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <div class="mod-head">
+                    <div class="inner">
+                        <div class="bd">
+                            <div class="logo">
+                                <a href="/"><img src="https://passer-by.com/static/image/public/logo.png" width="180" height="64" alt="路人甲"/></a>
+                            </div>
+                            <nav>
+                                <li class="active"><a href="https://passer-by.com/project.html">项目</a></li>
+                                <li><a href="https://passer-by.com/writing.html">文字</a></li>
+                                <li><a href="https://passer-by.com/photograph.html">摄影</a></li>
+                                <li><a href="https://passer-by.com/comment.html">留言</a></li>
+                                <li><a href="https://passer-by.com/about.html">关于</a></li>
+                            </nav>
+                            <div class="operation">
+                                <a class="btn" href="https://github.com/mumuy/widget-datetime/" rel="nofollow" target="_blank" title="Github">
+                                    <svg aria-hidden="true" class="octicon" title="GitHub " version="1.1" viewBox="0 0 16 16" width="24" height="24"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
+                                    <span>Github</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mod-bg">
+                    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                        <defs>
+                            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+                        </defs>
+                        <g class="parallax">
+                            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.4)"></use>
+                            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.6)"></use>
+                            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.2)"></use>
+                            <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(255,255,255,1)"></use>
+                        </g>
+                    </svg>
+                </div>
+            </header>
+            <div class="container">
+                <div class="inner">
+                    <div class="mod-poster">
+                        <div class="bd">
+                            <div class="title"><h1>日期时间选择器<span class="tag">开源组件</span></h1></div>
+                            <p>自定义限制选择范围和表单值格式化，兼顾日期时间单点和范围选择</p>
+                        </div>
+                    </div>
+                    <section class="mod-panel">
+                        <div class="hd">
+                            <h3 class="title">选择日期和时间</h3>
+                        </div>
+                        <div class="bd">
+                            <div class="input-wrapper">
+                                <widget-datetime placeholder="请选择日期和时间" pattern="YYYY年MM月DD日 HH:mm" value="" range="[['09:30','16:30']]" limit='["weekday"]'></widget-datetime>
+                            </div>
+                            <widget-code language="html">&lt;widget-datetime placeholder="请选择日期和时间" pattern="YYYY年MM月DD日 HH:mm" value="" range="[['09:30','16:30']]" limit='["weekday"]'&gt;&lt;/widget-datetime&gt;</widget-code>
+                        </div>
+                    </section>
+                    <section class="mod-panel">
+                        <div class="hd">
+                            <h3 class="title">选择日期</h3>
+                        </div>
+                        <div class="bd">
+                            <div class="input-wrapper">
+                                <widget-date placeholder="请选择日期" value=""></widget-date>
+                            </div>
+                            <widget-code language="html">&lt;widget-date placeholder="请选择日期" value=""&gt;&lt;/widget-date&gt;</widget-code>
+                        </div>
+                    </section>
+                    <section class="mod-panel">
+                        <div class="hd">
+                            <h3 class="title">选择时间</h3>
+                        </div>
+                        <div class="bd">
+                            <div class="input-wrapper">
+                                <widget-time placeholder="请选择时间" value=""></widget-time>
+                            </div>
+                            <widget-code language="html">&lt;widget-time placeholder="请选择时间" value=""&gt;&lt;/widget-time&gt;</widget-code>
+                        </div>
+                    </section>
+                    <section class="mod-panel">
+                        <div class="hd">
+                            <h3 class="title">选择日期和时间范围</h3>
+                        </div>
+                        <div class="bd">
+                            <div class="input-wrapper">
+                                <widget-datetime-range placeholder="请选择日期和时间" value="" range='[["09:30","16:30"]]' limit='["weekday"]'></widget-datetime-range>
+                            </div>
+                            <widget-code language="html">&lt;widget-datetime-range placeholder="请选择日期和时间" value="" range='[["09:30","16:30"]]' limit='["weekday"]'&gt;&lt;/widget-datetime-range&gt;</widget-code>
+                        </div>
+                    </section>
+                    <section class="mod-panel">
+                        <div class="hd">
+                            <h3 class="title">选择日期范围</h3>
+                        </div>
+                        <div class="bd">
+                            <div class="input-wrapper">
+                                <widget-date-range placeholder="请选择日期" value=""></widget-date-range>
+                            </div>
+                            <widget-code language="html">&lt;widget-date-range placeholder="请选择日期" value=""&gt;&lt;/widget-date-range&gt;</widget-code>
+                        </div>
+                    </section>
+                    <section class="mod-panel">
+                        <div class="hd">
+                            <h3 class="title">选择时间范围</h3>
+                        </div>
+                        <div class="bd">
+                            <div class="input-wrapper">
+                                <widget-time-range placeholder="请选择时间" value=""></widget-time-range>
+                            </div>
+                            <widget-code language="html">&lt;widget-time-range placeholder="请选择时间" value=""&gt;&lt;/widget-time-range&gt;</widget-code>
+                        </div>
+                    </section>
+                    <div class="mod-panel">
+                        <div class="hd">
+                            <h3 class="title">组件属性</h3>
+                        </div>
+                        <div class="bd">
+                            <div class="table-inner">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>属性</th>
+                                            <th>参考值</th>
+                                            <th>说明</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>placeholder</td>
+                                            <td>'请选择日期'</td>
+                                            <td>为空时占位提醒</td>
+                                        </tr>
+                                        <tr>
+                                            <td>value</td>
+                                            <td>'2026-01-01'</td>
+                                            <td>默认值</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pattern</td>
+                                            <td>'YYYY年MM月DD日'</td>
+                                            <td>
+                                                <p>格式化值</p>
+                                                <p>YYYY - 年</p>
+                                                <p>MM - 月</p>
+                                                <p>DD - 日</p>
+                                                <p>HH - 小时</p>
+                                                <p>mm - 分钟</p>
+                                                <p>ss - 秒</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>range</td>
+                                            <td>[['2026-01-01','2026-06-30']]</td>
+                                            <td>
+                                                <p>限制选择范围</p>
+                                                <p>[['2026-01-01','2026-06-30']] - 限制日期</p>
+                                                <p>[['09:00','21:00']] - 限制时间</p>
+                                                <p>[['2026-01-01',null]] - 单向限制</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>limit</td>
+                                            <td>['weekend']</td>
+                                            <td>
+                                                <p>限制类型</p>
+                                                <p>weekend - 周末</p>
+                                                <p>weekday - 工作日</p>
+                                                <p>sunday/monday/tuesday/wednesday/thursday/friday/saturday - 单向限制</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="module mod-article">
+                        <div class="hd"><span>关于日期时间选择器</span></div>
+                        <div class="bd">
+                            <p>本日期时间选择器基于Web Component开发。组件支持精准选择日期与时间，界面直观、操作便捷，可自定义时间范围、禁用时段、起始结束时间等规则。支持标准时间格式输出，自动格式化数据，适配表单提交、预约排班、日程管理、数据筛选等多种业务场景，稳定兼容各类前端项目，提升时间选择体验与数据规范性。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="module mod-copy">
+                    <div class="inner">
+                        <div class="hd"><span>组件开源</span></div>
+                        <div class="bd">
+                            <p><span>组件基于「<a href="https://github.com/mumuy/widget-datetime/blob/master/LICENSE" rel="nofollow" target="_blank">MIT许可协议</a>」开源，除需在源码中保留版权信息和许可声明外，你有权利使用、复制、修改、合并、出版发行、散布、再授权及贩售软件及软件的副本。</span>项目持续更新中，如发现错漏或有想法建议可在此</span> <a class="text-red" href="https://github.com/mumuy/widget-datetime/issues" rel="nofollow" target="_blank">反馈问题</a>。</p>
+                            <div class="buttons">
+                                <a class="github-button" href="https://github.com/mumuy" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="Follow @mumuy on GitHub">Follow @mumuy</a>
+                                <a class="github-button" href="https://github.com/mumuy/widget-datetime/fork" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork mumuy/widget-datetime on GitHub">Fork</a>
+                                <a class="github-button" href="https://github.com/mumuy/widget-datetime" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star mumuy/widget-datetime on GitHub">Star</a>
+                                <a class="github-button" href="https://github.com/mumuy/widget-datetime/archive/HEAD.zip" data-icon="octicon-download" data-size="large" aria-label="Download mumuy/widget-datetime on GitHub">Download</a>
+                            </div>
+                            <code>&lt;script type="text/javascript" src="https://passer-by.com/widget-datetime/dist/widget-datetime.min.js"&gt;&lt;/script&gt;</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner">
+                    <script type="text/javascript" src="https://passer-by.com/static/script/projects.js"></script>
+                </div>
+            </div>
+            <footer>
+                <div class="mod-fixedbar">
+                    <div class="bd">
+                        <ul>
+                            <li>
+                                <a class="gotop" href="javascript:;" rel="nofollow">
+                                    <img src="https://www.passer-by.com/static/image/public/icon-gotop.png" width="24" height="24" alt="回到顶部">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mod-foot">
+                    <div class="bd">
+                        <p>
+                            <span>Copyright &copy; 2025</span>
+                            <a href="/">路人甲</a>
+                            <span>版权所有</span>
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script type="text/javascript" src="https://www.passer-by.com/widget-code/dist/widget-code.min.js"></script>
+        <script type="text/javascript" src="./dist/widget-datetime.min.js?v=202602042000"></script>
+        <script async defer src="https://cdn.bootcdn.net/ajax/libs/github-buttons/2.21.1/buttons.min.js"></script>
+        <script type="text/javascript" src="https://passer-by.com/static/script/common.js"></script>
+        <script type="text/javascript" src="https://passer-by.com/static/script/stat.js"></script>
+    </body>
+</html>
