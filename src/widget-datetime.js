@@ -1,7 +1,7 @@
 import './widget-datetime-item.js';
 import datex from './datex.js';
 
-import styleSheet from './style/widget.css' assert { type: 'css'};
+import styleSheet from './style/widget.css' with { type: 'css'};
 
 const DATE_PATTERN = 'YYYY-MM-DD';
 const TIME_PATTERN = 'HH:mm:ss';

@@ -2,7 +2,7 @@ import { minYear,maxYear } from './module/method/config/base.js';
 import {periodMap} from './module/method/config/period.js';
 import datex from './datex.js';
 
-import styleSheet from './style/widget-item.css' assert { type: 'css'};
+import styleSheet from './style/widget-item.css' with { type: 'css'};
 
 const DATE_PATTERN = 'YYYY-MM-DD';
 const TIME_PATTERN = 'HH:mm:ss';
