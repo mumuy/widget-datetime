@@ -331,27 +331,57 @@ class WidgetInput extends HTMLElement {
                 _.$input.value = _.getValue();
             });
         }
-        if(_.$start){
-            _.$start.addEventListener('onSelect',function(data){
-                const start = data.detail.value;
-                _.$end.link = start;
-                if(_.$end.value&&start>_.$end.value){
-                    _.$end.value = start;
-                    _.$start.link = start;
+        if(isRange){
+            if(_.type=='date-range'){   // 日期选择器特殊处理，两个日历可以联动选择
+                let selectRange = [];
+                let eventToggle = false;
+                const selectBindBoth = function(data){
+                    if(eventToggle){
+                        return false;
+                    }
+                    eventToggle = true;
+                    if(selectRange.length>=2){
+                        selectRange = [];
+                    }
+                    selectRange.push(data.detail.value);
+                    selectRange.sort();
+                    _.$start.value = selectRange[0]??'';
+                    _.$end.value =selectRange[1]??'';
+                    _.$start.link = selectRange[1]??'';
+                    _.$end.link =selectRange[0]??'';
+                    _.$input.value = _.getValue();
+                    eventToggle = false;
+                };
+                if(_.$start){
+                    _.$start.addEventListener('onSelect',selectBindBoth);
                 }
-                _.$input.value = _.getValue();
-            });
-        }
-        if(_.$end){
-            _.$end.addEventListener('onSelect',function(data){
-                const end = data.detail.value;
-                _.$start.link = end;
-                if(_.$start.value&&end<_.$start.value){
-                    _.$start.value = end;
-                    _.$end.link = end;
+                if(_.$end){
+                    _.$end.addEventListener('onSelect',selectBindBoth);
                 }
-                _.$input.value = _.getValue();
-            });
+            }else{
+                if(_.$start){
+                    _.$start.addEventListener('onSelect',function(data){
+                        const start = data.detail.value;
+                        _.$end.link = start;
+                        if(_.$end.value&&start>_.$end.value){
+                            _.$end.value = start;
+                            _.$start.link = start;
+                            _.$input.value = _.getValue();
+                        }
+                    });
+                }
+                if(_.$end){
+                    _.$end.addEventListener('onSelect',function(data){
+                        const end = data.detail.value;
+                        _.$start.link = end;
+                        if(_.$start.value&&end<_.$start.value){
+                            _.$start.value = end;
+                            _.$end.link = end;
+                            _.$input.value = _.getValue();
+                        }
+                    });
+                }
+            }
         }
     }
     // 解析值

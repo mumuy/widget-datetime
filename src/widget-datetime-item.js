@@ -124,10 +124,12 @@ class WidgetDatetimeItem extends HTMLElement {
         return this.setAttribute('steps',value);
     }
     attributeChangedCallback(name, oldValue, newValue){
-        if(oldValue!=newValue&&newValue!=null&&oldValue!=null){
+        if(oldValue!=newValue&&newValue!==null&&oldValue!==null){
             if(name=='value'){
+                this.#date = newValue;
                 this.setValue(newValue);
             }else if(name="link"){
+                this.#link_date = newValue;
                 this.setLink(newValue);
             }
             this.formatItem();
